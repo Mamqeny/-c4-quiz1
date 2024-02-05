@@ -113,7 +113,6 @@ unique_genres_count = individual_genres.nunique()
 print("Number of Unique Genres in the Dataset:", unique_genres_count)
 
 #Correlation analysis of the numerical values
-numerical_features = df.select_dtypes(include=['int64', 'float64'])
 
 import seaborn as sns
 import matplotlib.pyplot as plt
