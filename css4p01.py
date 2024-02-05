@@ -115,9 +115,17 @@ print("Number of Unique Genres in the Dataset:", unique_genres_count)
 #Correlation analysis of the numerical values
 numerical_features = df.select_dtypes(include=['int64', 'float64'])
 
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Selecting numerical features for correlation analysis
+numerical_features = df.select_dtypes(include=['int64', 'float64'])
+
 # Calculate correlation matrix
 correlation_matrix = numerical_features.corr()
 
-# Display the correlation matrix
-print("Correlation Matrix:")
-print(correlation_matrix)
+# Create a heatmap using Seaborn
+plt.figure(figsize=(10, 8))
+sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', linewidths=.5)
+plt.title('Correlation Matrix of Numerical Features')
+plt.show()
